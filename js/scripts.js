@@ -18,10 +18,10 @@ function closeModal() {
 }
 
 gridItems.forEach(item => {
-  item.addEventListener('click', () => {
-    const videoSrc = item.getAttribute('data-video');
-    openModal(videoSrc);
-  });
+  const videoSrc = item.getAttribute('data-video');
+  if (videoSrc) {
+    item.addEventListener('click', () => openModal(videoSrc));
+  }
 });
 
 closeButton.addEventListener('click', closeModal);
